@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day/Night Mode</title>
+
+  <style>
+    /* Default styles for body */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      transition: background 0.5s, color 0.5s;
+    }
+
+    /* Day mode */
+    body.day {
+      background-color: #f9f9f9;
+      color: #222;
+    }
+
+    body.day button {
+      background: #ffcc00;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+
+    /* Night mode */
+    body.night {
+      background-color: #121212;
+      color: #f1f1f1;
+    }
+
+    body.night button {
+      background: #333;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+
+<body class="day">
+  <div class="container">
+    <h1>Day & Night Mode Toggle</h1>
+    <p>This page can switch between day and night mode.</p>
+    <button id="toggleBtn">🌙 Switch to Night</button>
+  </div>
+
+
+
+  <script>
+    // JavaScript to handle the toggle functionality
+    const toggleBtn = document.getElementById("toggleBtn");
+    const body = document.body;
+
+    toggleBtn.addEventListener("click", () => {
+      // Toggle day/night class
+      body.classList.toggle("day");
+      body.classList.toggle("night");
+
+      // Change button text/icon
+      if (body.classList.contains("night")) {
+        toggleBtn.textContent = "☀️ Switch to Day";
+      } else {
+        toggleBtn.textContent = "🌙 Switch to Night";
+      }
+    });
+  </script>
+</body>
+
+</html>
